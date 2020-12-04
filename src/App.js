@@ -3,22 +3,24 @@ import './App.css';
 import Header from "./components/layout/Header";
 import Todos from './components/Todos';
 import AddTodo from './components/AddTodo';
+// import uuid from 'uuid';
+import {v4 as uuidv4} from "uuid";
 
 class App extends Component {
   state = {
     todos: [
       {
-        id: 1,
+        id: uuidv4(),
         title: 'Take out the trash',
         completed: false
       },
       {
-        id: 2,
+        id: uuidv4(),
         title: 'Feed the birds',
         completed: false
       },
       {
-        id: 3,
+        id: uuidv4(),
         title: 'Buy chocolate',
         completed: false
       }
@@ -32,7 +34,7 @@ this.setState({ todos: [...this.state.todos.filter(todo => todo.id !== id)]})
 //Add todo
 addTodo = (title) => {
   const newTodo = {
-    id: 4,
+    id: uuidv4(),
     title,
     completed: false
   }
